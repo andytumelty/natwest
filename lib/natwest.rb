@@ -112,7 +112,7 @@ module Natwest
         form = page.form_with(action: 'StatementsLandingPageA.aspx')
         button = form.button_with(value: 'Search transactions')
         self.page = form.submit(button)
-        assert(page.title.include?('Transaction search - Select account and period'),
+        assert(page.title.include?('Statements - Transaction search - Select account and period'),
                "Got '#{page.title}' instead of Transaction search")
 
         self.page = page.link_with(text: 'view transactions between two dates.').click
